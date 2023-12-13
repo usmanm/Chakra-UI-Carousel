@@ -37,10 +37,10 @@ export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
   );
 
   const [isBetweenMdAnd2Xl] = useMediaQuery(
-    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.2xl})`
+    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.["2xl"]})`
   );
 
-  const [isGreaterThan2XL] = useMediaQuery(`(min-width: ${breakpoints?.2xl})`);
+  const [isGreaterThan2XL] = useMediaQuery(`(min-width: ${breakpoints?.["2xl"]})`);
 
   useEffect(() => {
     if (isBetweenBaseAndMd) {

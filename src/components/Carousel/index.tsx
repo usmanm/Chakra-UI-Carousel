@@ -36,11 +36,11 @@ export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
     `(min-width: ${breakpoints?.base}) and (max-width: ${breakpoints?.md})`
   );
 
-  const [isBetweenMdAndXl] = useMediaQuery(
-    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.xl})`
+  const [isBetweenMdAnd2Xl] = useMediaQuery(
+    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.2xl})`
   );
 
-  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints?.xl})`);
+  const [isGreaterThan2XL] = useMediaQuery(`(min-width: ${breakpoints?.2xl})`);
 
   useEffect(() => {
     if (isBetweenBaseAndMd) {
@@ -48,12 +48,12 @@ export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
       setMultiplier(0.65);
       setConstraint(1);
     }
-    if (isBetweenMdAndXl) {
+    if (isBetweenMdAnd2Xl) {
       setItemWidth(sliderWidth / 2 - gap);
       setMultiplier(0.5);
       setConstraint(2);
     }
-    if (isGreaterThanXL) {
+    if (isGreaterThan2XL) {
       setItemWidth(sliderWidth / 3 - gap);
       setMultiplier(0.35);
       setConstraint(3);
